@@ -84,7 +84,7 @@ export default function App() {
           setLoading(true);
           setErreur(false);
           const res = await fetch(
-            `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
+            `https://www.omdbapi.com/?apikey=${KEY}&s=${query}`,
             { signal: controller.signal }
           );
           const data = await res.json();
@@ -277,7 +277,7 @@ function MovieDetails({ selectedID, onClose, onSetWatched, watched_ }) {
           setLoading(true);
           setErreur(false);
           const res = await fetch(
-            `http://www.omdbapi.com/?apikey=${KEY}&i=${selectedID}`
+            `https://www.omdbapi.com/?apikey=${KEY}&i=${selectedID}`
           );
           if (!res.ok) throw new Error("quelque chose c'est passé");
           const data = await res.json();
